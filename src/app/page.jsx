@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const URL = "https://algrow.online/channels";
+const URL = "https://algrow.online/elevenlabs/";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);

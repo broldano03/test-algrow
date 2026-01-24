@@ -10,21 +10,15 @@ export default function Home() {
   const handleClick = () => {
     if (loading) return;
     setLoading(true);
-
-    try {
-      window.location.assign(URL);
-    } catch {
-      window.location.href = URL;
-    }
+    // NO redirigimos con JS → dejamos que <a> navegue normalmente
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-black dark:to-zinc-900 font-sans">
       <div className="p-8">
-        <button
-          type="button"
+        <a
+          href={URL}
           onClick={handleClick}
-          disabled={loading}
           aria-label="Ir a Algrow Channels"
           aria-busy={loading}
           className={[
@@ -35,7 +29,6 @@ export default function Home() {
             "shadow-lg hover:shadow-xl",
             "transition-all motion-safe:duration-200",
             "focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-400/50",
-            "disabled:opacity-60 disabled:cursor-not-allowed",
             "ring-1 ring-white/10",
           ].join(" ")}
         >
@@ -78,11 +71,12 @@ export default function Home() {
               <span>Ir a Algrow Channels</span>
             </>
           )}
-        </button>
+        </a>
 
         <div className="mt-3 text-center text-sm text-zinc-600 dark:text-zinc-400">
           <span className="opacity-80">
-            Click para abrir <span className="font-medium">algrow.online/channels</span>
+            Click para abrir{" "}
+            <span className="font-medium">algrow.online/channels</span>
           </span>
         </div>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-const URL = "https://algrow.online/elevenlabs/";
+const URL = "https://algrow.online/";
 
 export default function Home() {
   return (
